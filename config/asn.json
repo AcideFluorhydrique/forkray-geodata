@@ -1,0 +1,10 @@
+{
+  "_comment": "ASNs whose announced ranges make up each service list, in addition to the ranges the operator publishes (see scripts/update-sources.py). The prefixes for an ASN come from DB-IP's IP to ASN Lite database.",
+  "cloudflare": ["AS13335", "AS132892", "AS133877", "AS139242", "AS14789", "AS202623", "AS203898", "AS209242", "AS394536", "AS395747", "AS400095", "AS402542"],
+  "facebook": ["AS32934", "AS34825", "AS54115", "AS63293", "AS149642"],
+  "fastly": ["AS54113", "AS394192", "AS895"],
+  "google": ["AS15169", "AS139070", "AS139190", "AS13949", "AS151231", "AS16550", "AS16591", "AS19425", "AS19448", "AS19527", "AS209504", "AS209519", "AS209539", "AS214609", "AS214611", "AS22577", "AS22859", "AS26684", "AS26910", "AS32381", "AS33715", "AS36039", "AS36040", "AS36383", "AS36384", "AS36385", "AS36411", "AS36492", "AS36520", "AS36561", "AS36987", "AS394089", "AS394507", "AS394639", "AS395973", "AS396178", "AS396982", "AS40873", "AS41264", "AS43515", "AS45566", "AS55023", "AS6432"],
+  "netflix": ["AS2906", "AS40027", "AS394406", "AS55095"],
+  "telegram": ["AS44907", "AS59930", "AS62014", "AS62041", "AS211157"],
+  "twitter": ["AS13414", "AS35995", "AS54888", "AS63179"]
+}

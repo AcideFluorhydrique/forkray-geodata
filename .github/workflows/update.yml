@@ -1,0 +1,75 @@
+name: Update sources
+
+# Refreshes data/ from the upstream sources every week and proposes the change
+# as a pull request, where build.yml builds and checks it. Nothing reaches main
+# without review. See README.md.
+
+on:
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-sources
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      # SYNC_TOKEN is a fine-grained personal access token for this repository
+      # (Contents and Pull requests: read and write). Pull requests opened with
+      # the default GITHUB_TOKEN do not trigger build.yml, so without the token
+      # the proposal arrives unchecked and needs a manual run of Build.
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.SYNC_TOKEN || github.token }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: tools/go.mod
+          cache-dependency-path: tools/go.sum
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Fetch the sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          dlc_commit=$(python3 scripts/update-sources.py)
+          # The geosite generator is taken from the same commit as the lists it
+          # reads, so new list syntax and the code that parses it move together.
+          go -C tools get -tool "github.com/v2fly/domain-list-community@${dlc_commit}"
+          go -C tools mod tidy
+
+      - name: Propose the update
+        env:
+          GH_TOKEN: ${{ secrets.SYNC_TOKEN || github.token }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing changed upstream."
+            exit 0
+          fi
+          branch=update/sources
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -C "$branch"
+          git add -A
+          git commit -q -m "Update sources" -m "$(git diff --cached --stat -- sources.lock.json tools | tail -n 20)"
+          git push -f origin "$branch"
+          if [ -z "$(gh pr list --head "$branch" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head "$branch" --base main \
+              --title "Update sources" \
+              --body "Weekly refresh from the upstream sources. sources.lock.json records the exact revisions and checksums taken; review the data diff before merging."
+          fi

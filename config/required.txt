@@ -1,0 +1,24 @@
+# Categories the Forkray (v2rayNG) routing presets and core configuration refer
+# to. Xray refuses to start when a rule names a category its .dat file lacks,
+# so scripts/check-dat.py fails the build if any of these is missing.
+#
+# <file> <category>
+geosite.dat cn
+geosite.dat google
+geosite.dat private
+geosite.dat gfw
+geosite.dat greatfire
+geosite.dat category-ru
+geosite.dat category-ir
+geoip.dat cn
+geoip.dat private
+geoip.dat ru
+geoip.dat ir
+geoip.dat google
+geoip.dat facebook
+geoip.dat fastly
+geoip.dat netflix
+geoip.dat telegram
+geoip.dat twitter
+geoip-only-cn-private.dat cn
+geoip-only-cn-private.dat private

@@ -1,0 +1,52 @@
+name: Build
+
+# Builds the .dat files from this commit, checks that every category the app
+# needs is present, and builds them a second time to prove the output depends
+# on the commit alone. The files are uploaded as a workflow artifact.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: tools/go.mod
+          cache-dependency-path: tools/go.sum
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Build
+        run: bash scripts/build.sh
+
+      - name: Build again and compare
+        run: |
+          set -euo pipefail
+          cp out/SHA256SUMS first.sha256
+          bash scripts/build.sh > /dev/null
+          if ! diff first.sha256 out/SHA256SUMS; then
+            echo "::error::Two builds of the same commit differ."
+            exit 1
+          fi
+
+      - name: Upload the .dat files
+        uses: actions/upload-artifact@v7
+        with:
+          name: geodata
+          path: out/
