@@ -25,4 +25,5 @@ out/.bin/geoip convert -c ./config/geoip.json
 
 rm -rf out/.bin
 python3 scripts/check-dat.py out
+python3 scripts/notice.py
 (cd out && sha256sum -- *.dat | tee SHA256SUMS)

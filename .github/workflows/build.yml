@@ -44,6 +44,14 @@ jobs:
             echo "::error::Two builds of the same commit differ."
             exit 1
           fi
+          # On the run page, which unlike the log needs no sign-in, so anyone
+          # can compare these with their own build of the same commit.
+          {
+            echo '### SHA-256'
+            echo '```'
+            cat out/SHA256SUMS
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload the .dat files
         uses: actions/upload-artifact@v7

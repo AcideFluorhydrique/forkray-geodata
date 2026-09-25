@@ -41,8 +41,11 @@ everything the current data was taken from. The license texts are in
 `LICENSES/`.
 
 **Attribution.** DB-IP's licence requires crediting it wherever the data is
-used: an app shipping these files has to show "IP Geolocation by
-[DB-IP](https://db-ip.com)" in its licences or about screen.
+used, and the MIT and LGPL licences require their notices to accompany the
+data: an app shipping these files has to show them, including "IP Geolocation
+by [DB-IP](https://db-ip.com)". `scripts/build.sh` writes all of it to
+`out/NOTICE.html`, and `python3 scripts/notice.py --append-to <page.html>`
+inserts it into an existing licences page.
 
 ## Not included
 
@@ -60,7 +63,8 @@ Needs Go (the version in `tools/go.mod` or newer) and Python 3.
 bash scripts/build.sh
 ```
 
-The files and their checksums (`SHA256SUMS`) are written to `out/`.
+The files, their checksums (`SHA256SUMS`) and the notices (`NOTICE.html`)
+are written to `out/`. CI shows the checksums on each run's summary page.
 `scripts/check-dat.py` fails the build if a category listed in
 `config/required.txt` is missing or empty: Xray refuses to start when a routing
 rule names a category its database lacks.
