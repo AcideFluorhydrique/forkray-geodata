@@ -21,10 +21,16 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      # SYNC_TOKEN is a fine-grained personal access token for this repository
-      # (Contents and Pull requests: read and write). Pull requests opened with
-      # the default GITHUB_TOKEN do not trigger build.yml, so without the token
-      # the proposal arrives unchecked and needs a manual run of Build.
+      # Opening the pull request needs one of:
+      # - a SYNC_TOKEN secret: a fine-grained personal access token for this
+      #   repository (Contents and Pull requests: read and write). Preferred,
+      #   because its pull requests trigger build.yml.
+      # - the repository setting "Allow GitHub Actions to create and approve
+      #   pull requests" (Settings, Actions, General). GitHub leaves it off by
+      #   default, and pull requests opened this way do not trigger build.yml,
+      #   so Build then has to be run by hand on the branch.
+      # With neither, the update is still pushed to its branch and the last
+      # step fails with a link for opening the pull request by hand.
       - name: Checkout code
         uses: actions/checkout@v7
         with:
@@ -69,7 +75,10 @@ jobs:
           git commit -q -m "Update sources" -m "$(git diff --cached --stat -- sources.lock.json tools | tail -n 20)"
           git push -f origin "$branch"
           if [ -z "$(gh pr list --head "$branch" --state open --json number --jq '.[].number')" ]; then
-            gh pr create --head "$branch" --base main \
+            if ! gh pr create --head "$branch" --base main \
               --title "Update sources" \
-              --body "Weekly refresh from the upstream sources. sources.lock.json records the exact revisions and checksums taken; review the data diff before merging."
+              --body "Weekly refresh from the upstream sources. sources.lock.json records the exact revisions and checksums taken; review the data diff before merging."; then
+              echo "::error::The update is on branch ${branch}, but its pull request could not be opened. Add a SYNC_TOKEN secret or allow Actions to create pull requests (see the comment in update.yml). Meanwhile open it by hand: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/main...${branch}?expand=1"
+              exit 1
+            fi
           fi

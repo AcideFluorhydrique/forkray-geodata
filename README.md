@@ -79,9 +79,13 @@ same domain-list-community commit as the data; the geoip generator
 ([Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip), GPL-3.0) is
 updated by hand with `go -C tools get -tool github.com/Loyalsoldier/geoip@<commit>`.
 
-For the pull request to trigger the build, add a `SYNC_TOKEN` repository
-secret: a fine-grained personal access token for this repository with Contents
-and Pull requests read and write.
+Opening that pull request needs either a `SYNC_TOKEN` repository secret (a
+fine-grained personal access token for this repository with Contents and Pull
+requests read and write) or the repository setting *Allow GitHub Actions to
+create and approve pull requests*, which GitHub leaves off by default. Prefer
+the token: only its pull requests trigger the build. With neither, the update
+is still pushed to the `update/sources` branch, and the workflow fails with a
+link for opening the pull request by hand.
 
 ## License
 
