@@ -1,9 +1,9 @@
 {
   "china-operator-ip": {
     "branch": "ip-lists",
-    "china.txt_sha256": "55dba07adc1d28864497917e47b287704eb965f033f6a683920bbd60e94f62f1",
-    "china6.txt_sha256": "0523edddd0a17751970e8e3b7e0fab804a9fd3dd048575812494800449ca6584",
-    "commit": "a44eebc0dc223e5e05ca7b4cd5f4ebdc5e301df3",
+    "china.txt_sha256": "53d08381534e953563ee6a8700e023b74bf78ce747c79763acaf180ef3387965",
+    "china6.txt_sha256": "5180778bb167285410dde21c5e195aa8351d4d3933639feed4403e42cdd0cee2",
+    "commit": "9cb30577f2fba34468a056dd2bed51a7c443c471",
     "license": "MIT",
     "repository": "https://github.com/gaoyifan/china-operator-ip"
   },
@@ -34,12 +34,12 @@
   "published-ranges": [
     {
       "list": "google",
-      "sha256": "6a68982e31382d2993c574c3e5577f92eda5dafde3d56decd085ae7482bfc924",
+      "sha256": "0ff91f7521ffdae1382554d38663c3558f381fd6583a665df863823f1662a7b2",
       "url": "https://www.gstatic.com/ipranges/goog.json"
     },
     {
       "list": "google",
-      "sha256": "0121448db959c1c2bf3acf77a63ba47dc34edb3ada7d000a0d316afc45f28b54",
+      "sha256": "1206d430e411429412f3de4fc2936c73318c201928e3146c429a0fe854600919",
       "url": "https://www.gstatic.com/ipranges/cloud.json"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "list": "fastly",
-      "sha256": "d0fa4abe04cded896cf1a1d1a1c16ce2861ea4feb837ebd045a89c7b06a15ab5",
+      "sha256": "b5e8800ff76c2a8fdcedb7d9b27f23b6cb3158034b157540e594651d42b60bc6",
       "url": "https://api.fastly.com/public-ip-list"
     },
     {
@@ -64,7 +64,7 @@
     },
     {
       "list": "cloudfront",
-      "sha256": "d9a07f19219a0a41718a6d485f5a6a0962ccce1d7679cf416fe725396e893c15",
+      "sha256": "870b9a159995bd9e851adce4b05ee90288f02f644dbf55d2c34c5ddfbb940b4b",
       "url": "https://ip-ranges.amazonaws.com/ip-ranges.json"
     }
   ]
