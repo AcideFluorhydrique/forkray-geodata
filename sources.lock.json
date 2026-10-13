@@ -1,45 +1,45 @@
 {
   "china-operator-ip": {
     "branch": "ip-lists",
-    "china.txt_sha256": "3d41f78bd45daae57aa46a32495e90d86fee8e4a3481f916087b9ca9d6cc8bca",
-    "china6.txt_sha256": "53a21dadbe10175dc75d7ccd078d64a92d3456a848f8573d6b34852cff61c7eb",
-    "commit": "230149b03fcc3b881235cdc1ff4ca4a52d657d98",
+    "china.txt_sha256": "55dba07adc1d28864497917e47b287704eb965f033f6a683920bbd60e94f62f1",
+    "china6.txt_sha256": "0523edddd0a17751970e8e3b7e0fab804a9fd3dd048575812494800449ca6584",
+    "commit": "a44eebc0dc223e5e05ca7b4cd5f4ebdc5e301df3",
     "license": "MIT",
     "repository": "https://github.com/gaoyifan/china-operator-ip"
   },
   "dbip-asn-lite": {
     "license": "CC-BY-4.0",
-    "release": "2026-09",
-    "sha256": "b1d32ccbd36cf01e011720a4b4b295bb24910a5806bc0de014e2bfe58d384464",
-    "url": "https://download.db-ip.com/free/dbip-asn-lite-2026-09.csv.gz"
+    "release": "2026-10",
+    "sha256": "ed175994548b59d168b2ab9faf1d64a1e2bf44e73099e1482e61c84b5a959af3",
+    "url": "https://download.db-ip.com/free/dbip-asn-lite-2026-10.csv.gz"
   },
   "dbip-country-lite": {
     "license": "CC-BY-4.0",
-    "release": "2026-09",
-    "sha256": "a32bb3c384bd3de60ad9024596aa5b395a6dd5beaa27a7223407cc2edc681d0b",
-    "url": "https://download.db-ip.com/free/dbip-country-lite-2026-09.csv.gz"
+    "release": "2026-10",
+    "sha256": "097426b8ddae89157d444a59ac1847e873f7943c32d52becc4371c8b0273af80",
+    "url": "https://download.db-ip.com/free/dbip-country-lite-2026-10.csv.gz"
   },
   "domain-list-community": {
-    "commit": "a5731758ed6bc9620b0e146ed24b07b9131893cf",
+    "commit": "c6adacf29cc4fb05e04651fcf03e00989ef9f797",
     "license": "MIT",
     "repository": "https://github.com/v2fly/domain-list-community",
-    "tarball_sha256": "aeebf6b0643490cb8c39243ab57f81ab6c411af14238dd7e9e23409d7526ddda"
+    "tarball_sha256": "d5a59ddc7b1577741ab910b1b5b0aa662f1456d41477bbfe056599f9e97f8ef0"
   },
   "gfwlist": {
-    "commit": "3fd14db3df72cbc2ed3bbd51310927dfd45893f9",
-    "gfwlist_txt_sha256": "800aeeda382d01817356ce99fe48aa4b5b56aae3de52c62e05db4db655d08fc8",
+    "commit": "819fb3b0df5531c512b2fed2cf6e73d7fad01d25",
+    "gfwlist_txt_sha256": "d9fe4835167f0039fa6909df23de4b7c3ead5c439b5b80d8e6c21184d98d93f5",
     "license": "LGPL-2.1",
     "repository": "https://github.com/gfwlist/gfwlist"
   },
   "published-ranges": [
     {
       "list": "google",
-      "sha256": "b2b5d60b0267f50e7dadc1f35341c429ae1e951fc584c19a9b5048ee0b6dbe8e",
+      "sha256": "6a68982e31382d2993c574c3e5577f92eda5dafde3d56decd085ae7482bfc924",
       "url": "https://www.gstatic.com/ipranges/goog.json"
     },
     {
       "list": "google",
-      "sha256": "f71ae5e6481d9194866af87cc94a4147f9b68f863b92cd399211b1a881341315",
+      "sha256": "0121448db959c1c2bf3acf77a63ba47dc34edb3ada7d000a0d316afc45f28b54",
       "url": "https://www.gstatic.com/ipranges/cloud.json"
     },
     {
@@ -64,7 +64,7 @@
     },
     {
       "list": "cloudfront",
-      "sha256": "b668a0af0d1fbc3f5316caf5cce29ce61251966419ebcd57f0fc83189360138b",
+      "sha256": "d9a07f19219a0a41718a6d485f5a6a0962ccce1d7679cf416fe725396e893c15",
       "url": "https://ip-ranges.amazonaws.com/ip-ranges.json"
     }
   ]
