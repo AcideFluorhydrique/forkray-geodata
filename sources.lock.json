@@ -1,9 +1,9 @@
 {
   "china-operator-ip": {
     "branch": "ip-lists",
-    "china.txt_sha256": "45538a68c092110c8de5953580945ecbf03eda916cf6e6c155769edec9452c24",
-    "china6.txt_sha256": "1aac98e6a3cf0a6fbae1dfc772fc33071edba0dd96fdfc7729fe88303eb8b54d",
-    "commit": "d5b6e937175c73deeda076aaaea2182822cba5a3",
+    "china.txt_sha256": "cd9c414cb1c6d3818cf4434e12d3e32c95aaac57afd0b4faac44ee46cb5bb33f",
+    "china6.txt_sha256": "a2f14c3d600dc7612638c51fd741d3d4cf4f115519436e05d4558d49e50664c9",
+    "commit": "375060e2299aa6344a87f309568ac3d748baf0cc",
     "license": "MIT",
     "repository": "https://github.com/gaoyifan/china-operator-ip"
   },
@@ -20,26 +20,26 @@
     "url": "https://download.db-ip.com/free/dbip-country-lite-2026-10.csv.gz"
   },
   "domain-list-community": {
-    "commit": "6ee52f2c36634aeabeb9c4ba486ca02cd84c3d4f",
+    "commit": "8f1acdf69923fde68e1cb6e8a58fb6e501fdaf2f",
     "license": "MIT",
     "repository": "https://github.com/v2fly/domain-list-community",
-    "tarball_sha256": "2835a7a858830e705ea2863d16f4e9ac1a9725e206d110a6c7b27b536f2fd400"
+    "tarball_sha256": "30b89dfdc0c364c305272b0a288868834c5e3d0e6153d7f507965d9b3e1ee9b9"
   },
   "gfwlist": {
-    "commit": "4238995aba9dddd7d9f3e6821cd43bad9b87523d",
-    "gfwlist_txt_sha256": "1432c8448a308697fdcf59fd6353d6e018a226692849cc4d066c402818bd427e",
+    "commit": "986098e6890e34b5e14f04209714f741bbe6313d",
+    "gfwlist_txt_sha256": "9c951b806c82350c52f269052c145f699e6bee481c1814abe2314f4a51dc8bef",
     "license": "LGPL-2.1",
     "repository": "https://github.com/gfwlist/gfwlist"
   },
   "published-ranges": [
     {
       "list": "google",
-      "sha256": "402ed79c6b1a61eb041f230e171cc007df4466766f5c8726eebe124d23aa138d",
+      "sha256": "7bf135aa29689da261bbf23545b8ee50c9bc1f2c305887e00ac78099bbc5da61",
       "url": "https://www.gstatic.com/ipranges/goog.json"
     },
     {
       "list": "google",
-      "sha256": "3eec67b4faff023935dd7d9c4c7cfdb050986e01123cd2f78286314cb5cac75a",
+      "sha256": "4a041a3c7a83514684e62f13baf05af072f7b6a750e9997d9570b3c36b59b7af",
       "url": "https://www.gstatic.com/ipranges/cloud.json"
     },
     {
@@ -64,7 +64,7 @@
     },
     {
       "list": "cloudfront",
-      "sha256": "641b6a1e9f862c4efd4abc55c0fc6608530ee60347cde70166032a741eb5611b",
+      "sha256": "c41f7b78e56f7bdeb568ae6d6d4a103cfc8d236219ce0b99e29e329e98fe10f1",
       "url": "https://ip-ranges.amazonaws.com/ip-ranges.json"
     }
   ]
