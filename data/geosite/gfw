@@ -1,4 +1,4 @@
-# Generated from https://github.com/gfwlist/gfwlist (986098e6890e34b5e14f04209714f741bbe6313d) by scripts/update-sources.py. LGPL-2.1.
+# Generated from https://github.com/gfwlist/gfwlist (efbdc355fb2aa9f6265fc9d2dd8d232a5444145c) by scripts/update-sources.py. LGPL-2.1.
 000webhost.com
 0rz.tw
 1-apple.com.tw
@@ -203,6 +203,7 @@ anobii.com
 anonfiles.com
 anonymouse.org
 anthonycalzadilla.com
+anthropic.auth0.com
 anthropic.com
 antiwave.net
 antpool.com
@@ -226,6 +227,7 @@ api.pureapk.com
 api.recaptcha.net
 api.shuaiapi.com
 api.steampowered.com
+api.themoviedb.org
 apiary.io
 apigee.com
 apk.support
@@ -509,6 +511,7 @@ broadpressinc.com
 brookings.edu
 brutaltgp.com
 bsky.app
+bsky.chat
 bsky.network
 bsky.social
 bt4g.org
@@ -734,7 +737,10 @@ ck101.com
 clashyun.com
 classicalguitarblog.net
 claude.ai
+claude.app
 claude.com
+claudemcpcontent.com
+claudeusercontent.com
 cldr.unicode.org
 clearsurance.com
 clementine-player.org
@@ -3662,6 +3668,7 @@ torlock.com
 torproject.org
 torrentgalaxy.to
 torrentkitty.tv
+torrentleech.org
 torrentprivacy.com
 torrentproject.se
 torrenty.org
@@ -4286,6 +4293,7 @@ youtubeeducation.com
 youtubegaming.com
 youtubekids.com
 youversion.com
+youversionapi.com
 youwin.com
 youxu.info
 yt.be
