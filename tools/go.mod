@@ -1,6 +1,10 @@
 module github.com/AcideFluorhydrique/forkray-geodata/tools
 
-go 1.26.0
+// The Go version Forkray builds with (GO_VERSION in its
+// .github/workflows/fdroid-source-build.yml, and go@ in its F-Droid recipe).
+// Forkray runs these tools with that Go and GOTOOLCHAIN=local, so this must
+// not be higher; CI here installs exactly this version.
+go 1.27.3
 
 tool (
 	github.com/Loyalsoldier/geoip
