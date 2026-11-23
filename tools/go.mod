@@ -29,7 +29,7 @@ require (
 	github.com/tidwall/gjson v1.19.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	github.com/v2fly/domain-list-community v0.0.0-20261116043758-41504eae2a11 // indirect
+	github.com/v2fly/domain-list-community v0.0.0-20261123085423-dff1013c77ee // indirect
 	github.com/v2fly/v2ray-core/v5 v5.56.0 // indirect
 	go4.org/netipx v0.0.0-20260823151212-3075585bcbeb // indirect
 	golang.org/x/net v0.62.0 // indirect
